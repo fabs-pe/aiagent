@@ -37,9 +37,7 @@ class FootSeoAgent:
             raise ValueError("Missing HF_MODEL in .env")
 
     def generate_seo_draft(self, topic: str) -> str:
-        print(f"\n🔍 Searching '{topic}'...")
         results = search_duckduckgo(f'"{topic}" football soccer premier league')
-        print("✅ Research complete!")
 
         system_prompt = (
             "You are an expert football SEO writer. "
@@ -89,15 +87,3 @@ REQUIRED FORMAT:
                 f"**Discover {topic}**\n"
                 f"**Keywords:** {topic.replace(' ', ', ')}"
             )
-
-
-if __name__ == "__main__":
-    agent = FootSeoAgent()
-    topic = input("Football topic: ")
-    draft = agent.generate_seo_draft(topic)
-
-    print("\n" + "=" * 80)
-    print("🏆 SEO FOOTBALL ARTICLE")
-    print("=" * 80)
-    print(draft)
-    print("=" * 80)

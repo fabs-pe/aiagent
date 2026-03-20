@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Football SEO Agent</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Football SEO Agent</h1>
+    <p>Enter a football topic and generate an SEO article draft.</p>
+
+    <form method="post" action="/">
+      <input
+        type="text"
+        name="topic"
+        placeholder="e.g. EPL top scorers 2004"
+        value="{{ topic }}"
+        required
+      />
+      <button type="submit">Generate</button>
+    </form>
+
+    {% if result %}
+      <div class="result">
+        <h2>Generated Article</h2>
+        <pre>{{ result }}</pre>
+      </div>
+    {% endif %}
+  </div>
+</body>
+</html>

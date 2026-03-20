@@ -1,7 +1,9 @@
-duckduckgo-search
+fastapi
+uvicorn
+jinja2
+python-multipart
 ddgs
 python-dotenv
 huggingface_hub
-langchain-community
 
 
